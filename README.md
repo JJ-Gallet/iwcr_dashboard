@@ -8,3 +8,10 @@ The code was created almost exclusivly using AI as a means to be able to go thre
 
 The correctness of data is ensured as the pictures are generated seperatly with a handwritten script which also stamps graphics
 with time and location
+
+## Adding Graphics
+
+New graphics need to be added in ./public/graphics .
+
+Naming convention : product_model_date_time_location.png  
+Files never need all arguments. eg. lidar does not contain a time as it represents a daily timeseries, on the otherhand rain needs a time but no location.
