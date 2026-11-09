@@ -15,3 +15,5 @@ New graphics need to be added in ./public/graphics .
 
 Naming convention : product_model_date_time_location.png  
 Files never need all arguments. eg. lidar does not contain a time as it represents a daily timeseries, on the otherhand rain needs a time but no location.
+
+### It is important that tools/build_catalog.py is executed to add picutres to the cataloge wich makes them able to be displayed.
