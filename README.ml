@@ -1,3 +1,4 @@
+## Introduction
 This is a repository which contains the dashboard code to visualise graphics gererated using iwcr visualisation tools.
 
 It needs to be feed with a directory/ contains a directory whit pictures to visualise. These pictures have to follow strict
