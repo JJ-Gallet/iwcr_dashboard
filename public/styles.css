@@ -1,0 +1,677 @@
+:root {
+  font-family: system-ui, sans-serif;
+  color: #172033;
+  background: #f3f6fa;
+}
+
+* { box-sizing: border-box; }
+
+body { margin: 0; }
+
+button,
+input,
+select {
+  font: inherit;
+  padding: .42rem;
+}
+
+button:disabled {
+  opacity: .4;
+  cursor: not-allowed;
+}
+
+.container {
+  width: min(1800px, 100%);
+  margin: auto;
+  padding: 1.25rem;
+}
+
+.topbar,
+.topbar-actions,
+.time-control,
+.station-overview,
+.station-card > header,
+.fullscreen-toolbar-header,
+.fullscreen-control-heading {
+  display: flex;
+  align-items: center;
+}
+
+.topbar {
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.topbar h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+.topbar h1 { margin-bottom: 0; }
+
+.topbar-actions {
+  gap: .75rem;
+  flex-wrap: wrap;
+  align-items: end;
+}
+
+#product-meta,
+#controls,
+.station-card,
+.plot-card,
+.station-overview,
+#fullscreen-toolbar {
+  background: white;
+  border: 1px solid #d8e0eb;
+  border-radius: .6rem;
+}
+
+#product-meta {
+  margin-top: 1rem;
+  padding: 1rem;
+}
+
+#controls {
+  margin-top: 1rem;
+  padding: 1rem;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+}
+
+.time-control {
+  gap: .3rem;
+}
+
+.time-control select {
+  min-width: 6.4rem;
+}
+
+fieldset {
+  min-width: 0;
+  border: 1px solid #d8e0eb;
+  border-radius: .4rem;
+}
+
+.choice-actions {
+  display: flex;
+  gap: .4rem;
+  margin-bottom: .5rem;
+}
+
+.choice-actions button,
+.fullscreen-control-heading button {
+  padding: .16rem .38rem;
+  font-size: .8rem;
+}
+
+.choices {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .45rem .8rem;
+}
+
+small {
+  display: block;
+  margin-top: .25rem;
+  color: #5e6b80;
+}
+
+#status {
+  margin: 1rem 0;
+  color: #43516a;
+}
+
+#plots {
+  display: grid;
+  gap: .8rem;
+}
+
+.model-mosaic {
+  display: grid;
+  gap: .8rem;
+  min-width: 0;
+}
+
+.mosaic-column {
+  display: grid;
+  grid-template-rows: repeat(var(--stack-size), auto);
+  gap: .8rem;
+  min-width: 0;
+}
+
+.plot-card {
+  margin: 0;
+  min-width: 0;
+}
+
+.plot-card figcaption {
+  padding: .55rem .7rem;
+  font-size: .9rem;
+  font-weight: 650;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.plot-frame {
+  min-height: 110px;
+  display: grid;
+  place-items: center;
+  padding: .35rem;
+  background: #fafcff;
+}
+
+.plot-frame a {
+  display: grid;
+  width: 100%;
+  place-items: center;
+}
+
+.plot-frame img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 72vh;
+  object-fit: contain;
+}
+
+.missing {
+  padding: 2rem 1rem;
+  color: #69758a;
+  text-align: center;
+}
+
+.sortable {
+  cursor: grab;
+}
+
+.sortable:active {
+  cursor: grabbing;
+}
+
+.dragging {
+  opacity: .45;
+}
+
+.drag-over {
+  outline: 3px dashed #2276c9;
+  outline-offset: 3px;
+}
+
+.station-layout {
+  display: grid;
+  gap: .8rem;
+}
+
+.station-board-scroll {
+  overflow: auto;
+  padding-bottom: .4rem;
+}
+
+.station-board {
+  display: grid;
+  grid-template-columns: repeat(var(--station-columns), minmax(0, 1fr));
+  grid-template-rows: repeat(var(--station-rows), auto);
+  gap: .9rem;
+  min-width: 0;
+}
+
+.station-card {
+  min-width: 0;
+  padding: .7rem;
+}
+
+.station-card > header {
+  gap: .5rem;
+  margin-bottom: .7rem;
+}
+
+.station-card h3 {
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+  margin: 0;
+}
+
+.station-overview {
+  gap: 1rem;
+  padding: .7rem;
+}
+
+.minimap {
+  width: 190px;
+  max-width: 42%;
+  height: auto;
+  flex: 0 0 auto;
+}
+
+.minimap rect {
+  fill: #f4f7fb;
+  stroke: #b5c1d3;
+}
+
+.minimap .other {
+  fill: #aab6c7;
+}
+
+.minimap .selected {
+  stroke: white;
+  stroke-width: 1.8;
+}
+
+.minimap text {
+  fill: white;
+  font-size: 7px;
+  font-weight: 700;
+  pointer-events: none;
+}
+
+.station-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .45rem .8rem;
+}
+
+.station-legend-item {
+  display: flex;
+  align-items: center;
+  gap: .3rem;
+  font-size: .88rem;
+}
+
+.station-marker {
+  display: inline-grid;
+  width: 1.2rem;
+  height: 1.2rem;
+  place-items: center;
+  flex: 0 0 auto;
+  color: white;
+  background: var(--station-colour);
+  border: 1px solid rgba(0, 0, 0, .25);
+  border-radius: 50%;
+  font-size: .72rem;
+  font-weight: 750;
+}
+
+#fullscreen-toolbar {
+  display: none;
+}
+
+/* Fullscreen */
+#dashboard:fullscreen {
+  width: 100vw;
+  max-width: none;
+  height: 100vh;
+  padding: .5rem;
+  background: #f3f6fa;
+  display: grid;
+  grid-template-columns: minmax(180px, 220px) minmax(0, 1fr);
+  gap: .6rem;
+}
+
+#dashboard:fullscreen .topbar,
+#dashboard:fullscreen #product-meta,
+#dashboard:fullscreen #controls {
+  display: none;
+}
+
+#dashboard:fullscreen #fullscreen-toolbar {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: .7rem;
+  padding: .6rem;
+  overflow-y: auto;
+}
+
+#dashboard:fullscreen #plot-stage {
+  min-width: 0;
+  min-height: 0;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+}
+
+#dashboard:fullscreen #status {
+  margin: .1rem 0 .35rem;
+  font-size: .84rem;
+}
+
+#dashboard:fullscreen #plots {
+  min-height: 0;
+  overflow: auto;
+  display: block;
+}
+
+#dashboard:fullscreen .model-mosaic {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+}
+
+#dashboard:fullscreen .mosaic-column {
+  min-height: 0;
+  grid-template-rows: repeat(var(--stack-size), minmax(0, 1fr));
+}
+
+#dashboard:fullscreen .plot-card {
+  min-height: 0;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+}
+
+#dashboard:fullscreen .plot-frame {
+  min-height: 0;
+  height: 100%;
+}
+
+#dashboard:fullscreen .plot-frame a {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+}
+
+#dashboard:fullscreen .plot-frame img {
+  width: 100%;
+  height: 100%;
+  max-height: none;
+  object-fit: contain;
+}
+
+#dashboard:fullscreen .station-layout {
+  height: 100%;
+  min-height: 0;
+}
+
+#dashboard:fullscreen .station-layout.has-overview {
+  grid-template-rows: auto minmax(0, 1fr);
+}
+
+#dashboard:fullscreen .station-layout.no-overview {
+  grid-template-rows: minmax(0, 1fr);
+}
+
+#dashboard:fullscreen .station-board-scroll {
+  min-height: 0;
+  overflow: auto;
+}
+
+#dashboard:fullscreen .station-board {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  grid-template-rows: repeat(var(--station-rows), minmax(0, 1fr));
+}
+
+#dashboard:fullscreen .station-card {
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+#dashboard:fullscreen .station-card > .model-mosaic {
+  min-height: 0;
+  flex: 1;
+}
+
+#dashboard:fullscreen .station-overview {
+  padding: .35rem .55rem;
+  gap: .6rem;
+}
+
+#dashboard:fullscreen .station-overview .minimap {
+  width: 110px;
+}
+
+#dashboard:fullscreen .station-legend-item {
+  font-size: .76rem;
+}
+
+.fullscreen-toolbar-header {
+  justify-content: space-between;
+  gap: .5rem;
+}
+
+.fullscreen-toolbar-header button {
+  min-width: 2rem;
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+.fullscreen-control-group {
+  display: grid;
+  gap: .4rem;
+  padding-top: .55rem;
+  border-top: 1px solid #d8e0eb;
+}
+
+.fullscreen-control-heading {
+  justify-content: space-between;
+  gap: .4rem;
+}
+
+.fullscreen-choices {
+  display: grid;
+  gap: .25rem;
+  font-size: .82rem;
+}
+
+.fullscreen-choices label {
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 700px) {
+  .container {
+    padding: .75rem;
+  }
+
+  #dashboard:fullscreen {
+    grid-template-columns: 150px minmax(0, 1fr);
+  }
+
+  #dashboard:fullscreen .station-overview {
+    display: none;
+  }
+}
+/*
+ * Fullscreen layout safety
+ *
+ * Grid and flex children normally have an implicit minimum size based on
+ * their content. For nested plot grids this can cause image tiles to extend
+ * beyond their assigned row and overlap neighbouring graphics.
+ *
+ * min-width/min-height: 0 explicitly permits shrinking.
+ */
+#dashboard:fullscreen #plots,
+#dashboard:fullscreen .station-layout,
+#dashboard:fullscreen .station-board-scroll,
+#dashboard:fullscreen .station-board,
+#dashboard:fullscreen .station-card,
+#dashboard:fullscreen .model-mosaic,
+#dashboard:fullscreen .mosaic-column,
+#dashboard:fullscreen .plot-card,
+#dashboard:fullscreen .plot-frame,
+#dashboard:fullscreen .plot-frame a {
+  min-width: 0;
+  min-height: 0;
+}
+
+/*
+ * Every station card and every plot card must remain inside its assigned
+ * fullscreen grid cell. Images are scaled with object-fit: contain, never
+ * cropped.
+ */
+#dashboard:fullscreen .station-card,
+#dashboard:fullscreen .plot-card {
+  overflow: hidden;
+}
+
+/*
+ * The station card consists of:
+ *   1. its header
+ *   2. the model mosaic filling all remaining available height
+ */
+#dashboard:fullscreen .station-card {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+}
+
+#dashboard:fullscreen .station-card > header {
+  min-height: 0;
+}
+
+/*
+ * The model mosaic needs an explicit available height. Its columns and
+ * stacked rows can now shrink proportionally for 4, 5, or more models.
+ */
+#dashboard:fullscreen .station-card > .model-mosaic,
+#dashboard:fullscreen .model-mosaic {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+}
+
+#dashboard:fullscreen .mosaic-column {
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+  grid-template-rows: repeat(var(--stack-size), minmax(0, 1fr));
+}
+
+/*
+ * A plot tile is a caption plus an image area. The image area receives
+ * remaining height and scales its image down if required.
+ */
+#dashboard:fullscreen .plot-card {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+}
+
+#dashboard:fullscreen .plot-card figcaption {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+#dashboard:fullscreen .plot-frame {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+}
+
+#dashboard:fullscreen .plot-frame a {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  place-items: center;
+  overflow: hidden;
+}
+
+/*
+ * Important: never crop or distort graphics.
+ * The entire image remains visible and is scaled down to fit its tile.
+ */
+#dashboard:fullscreen .plot-frame img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/*
+ * The station board itself must use finite, shrinkable rows.
+ */
+#dashboard:fullscreen .station-board {
+  align-items: stretch;
+  grid-template-rows: repeat(var(--station-rows), minmax(0, 1fr));
+}
+/*
+ * Station cards now use the same adaptive mosaic layout as model panels.
+ *
+ * This replaces the older uniform station grid. It allows a 1 + 2 layout
+ * for three stations and a 2 + 3 layout for five stations.
+ */
+.station-mosaic {
+  width: 100%;
+}
+
+.station-mosaic > .mosaic-column {
+  align-content: start;
+}
+
+/*
+ * Make each station card fill the available width in its mosaic slot.
+ */
+.station-mosaic .station-card {
+  width: 100%;
+}
+
+/*
+ * In regular (non-fullscreen) mode, each station's model view should retain
+ * its natural image height and not be forced into a viewport-sized tile.
+ */
+.station-model-mosaic {
+  width: 100%;
+}
+
+/*
+ * Fullscreen:
+ *
+ * Station cards are allowed to shrink inside the station mosaic. Their
+ * nested model mosaics then use the already-fixed contain-based image sizing.
+ */
+#dashboard:fullscreen .station-mosaic {
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+}
+
+#dashboard:fullscreen .station-mosaic > .mosaic-column {
+  min-width: 0;
+  min-height: 0;
+  grid-template-rows: repeat(var(--stack-size), minmax(0, 1fr));
+}
+
+#dashboard:fullscreen .station-mosaic .station-card {
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+}
+
+#dashboard:fullscreen .station-model-mosaic {
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+}
+/*
+ * Avoid native browser image/link dragging taking precedence over the
+ * sortable plot or station-card container.
+ */
+.sortable img,
+.sortable a {
+  -webkit-user-drag: none;
+  user-select: none;
+}
+
+/*
+ * The visible drag target should remain clear even when the cursor is over
+ * the image nested inside a figure.
+ */
+.sortable.drag-over {
+  outline: 3px dashed #2276c9;
+  outline-offset: 3px;
+  background: #edf6ff;
+}

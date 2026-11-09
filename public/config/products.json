@@ -1,0 +1,58 @@
+{
+  "observationSource": "obs",
+  "sources": [
+    { "id": "claef1k_ref", "label": "CLA-EF 1k reference" },
+    { "id": "claef1k_comad", "label": "CLA-EF 1k COMAD" },
+    { "id": "claef1k_30s", "label": "CLA-EF 1k 30 s" },
+    { "id": "claef1k_slhd", "label": "CLA-EF 1k SLHD" },
+    { "id": "obs", "label": "Observation" }
+  ],
+  "products": {
+    "rain": {
+      "label": "Rain",
+      "view": "map",
+      "description": "Hourly precipitation maps.",
+      "hours": { "start": 0, "end": 23 },
+      "defaultSources": ["obs"],
+      "metadata": { "Resolution": "Hourly" }
+    },
+    "radar": {
+      "label": "Radar",
+      "view": "map",
+      "description": "Hourly radar maps.",
+      "hours": { "start": 0, "end": 23 },
+      "defaultSources": ["obs"],
+      "metadata": { "Resolution": "Hourly" }
+    },
+    "lidar": {
+      "label": "Lidar",
+      "view": "station",
+      "description": "Wind height-time plots, 00–24 UTC.",
+      "minimap": true,
+      "defaultSources": ["obs"],
+      "defaultLocations": ["bozen"],
+      "locations": [
+        { "id": "bozen", "label": "Bozen", "coordinates": [11.32158, 46.45523] },
+        { "id": "gargazon", "label": "Gargazon", "coordinates": [11.2, 46.5767] },
+        { "id": "kollmann", "label": "Kollmann", "coordinates": [11.529069, 46.595116] },
+        { "id": "mittewald", "label": "Mittewald", "coordinates": [11.571978, 46.806967] },
+        { "id": "naturns", "label": "Naturns", "coordinates": [10.991185, 46.647873] },
+        { "id": "rittnerhorn", "label": "Rittner Horn", "coordinates": [11.460197, 46.615651] },
+        { "id": "sarnthein", "label": "Sarnthein", "coordinates": [11.359278, 46.634911] },
+        { "id": "stmartin", "label": "St. Martin", "coordinates": [11.231075, 46.784444] }
+      ]
+    },
+    "raso": {
+      "label": "Radiosonde",
+      "view": "station",
+      "description": "Temperature and humidity height-time plots, 00–24 UTC.",
+      "minimap": false,
+      "defaultSources": ["obs"],
+      "defaultLocations": ["bozen"],
+      "locations": [
+        { "id": "bozen", "label": "Bozen" },
+        { "id": "kolsass", "label": "Kolsass" }
+      ]
+    }
+  }
+}

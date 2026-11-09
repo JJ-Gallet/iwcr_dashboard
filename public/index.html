@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Weather visualisation dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main id="dashboard" class="container">
+    <header class="topbar">
+      <h1>Weather visualisation dashboard</h1>
+
+      <div class="topbar-actions">
+        <label>
+          Product
+          <select id="product-select">
+            <option value="">Select a product…</option>
+          </select>
+        </label>
+
+        <button id="fullscreen-button" type="button" disabled>
+          ⛶ Fullscreen
+        </button>
+      </div>
+    </header>
+
+    <section id="product-meta" hidden></section>
+    <section id="controls" hidden></section>
+
+    <aside id="fullscreen-toolbar" hidden></aside>
+
+    <section id="plot-stage">
+      <p id="status">Select a product to start.</p>
+      <section id="plots"></section>
+    </section>
+  </main>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
