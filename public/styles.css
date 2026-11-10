@@ -675,3 +675,74 @@ small {
   outline-offset: 3px;
   background: #edf6ff;
 }
+/* Product-level colourbar, shown once beside the complete plot layout. */
+.plot-with-colorbar {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: .65rem;
+  align-items: start;
+  min-width: 0;
+}
+
+.plot-content {
+  min-width: 0;
+}
+
+.colorbar-panel {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: .35rem;
+  background: white;
+  border: 1px solid #d8e0eb;
+  border-radius: .45rem;
+}
+
+.colorbar-image {
+  display: block;
+  width: auto;
+  max-width: 105px;
+  height: auto;
+  max-height: 78vh;
+  object-fit: contain;
+}
+/* Keep the one colourbar visible, but compact, in fullscreen mode. */
+#dashboard:fullscreen .plot-with-colorbar {
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: .45rem;
+}
+
+#dashboard:fullscreen .plot-content {
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+}
+
+#dashboard:fullscreen .colorbar-panel {
+  min-height: 0;
+  height: 100%;
+  padding: .25rem;
+  align-items: center;
+}
+
+#dashboard:fullscreen .colorbar-image {
+  width: auto;
+  max-width: 85px;
+  height: auto;
+  max-height: 100%;
+  object-fit: contain;
+}
+@media (max-width: 700px) {
+  .colorbar-image {
+    max-width: 48px;
+  }
+
+  #dashboard:fullscreen .colorbar-image {
+    max-width: 40px;
+  }
+}

@@ -12,6 +12,7 @@
       "label": "Rain",
       "view": "map",
       "description": "Hourly precipitation maps.",
+      "colorbar": "graphics/colorbar_rain.png",
       "hours": { "start": 0, "end": 23 },
       "defaultSources": ["obs"],
       "metadata": { "Resolution": "Hourly" }
@@ -19,6 +20,7 @@
     "radar": {
       "label": "Radar",
       "view": "map",
+      "colorbar": "graphics/colorbar_radar.png",
       "description": "Hourly radar maps.",
       "hours": { "start": 0, "end": 23 },
       "defaultSources": ["obs"],
@@ -27,6 +29,7 @@
     "lidar": {
       "label": "Lidar",
       "view": "station",
+      "colorbar": "graphics/colorbar_lidar.png",
       "description": "Wind height-time plots, 00–24 UTC.",
       "minimap": true,
       "defaultSources": ["obs"],
@@ -45,6 +48,7 @@
     "raso": {
       "label": "Radiosonde",
       "view": "station",
+      "colorbar": "graphics/colorbar_raso.png",
       "description": "Temperature and humidity height-time plots, 00–24 UTC.",
       "minimap": false,
       "defaultSources": ["obs"],

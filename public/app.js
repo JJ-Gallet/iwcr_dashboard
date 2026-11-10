@@ -404,7 +404,7 @@ function renderMap(sources) {
     ? `${state.date}, ${state.time}:00 UTC`
     : `No graphics available for ${state.date}, ${state.time}:00 UTC.`;
 
-  plots.append(modelMosaic(
+  appendPlotContent(modelMosaic(
     sources,
     (source) => plotCard(
       `${sourceLabel(source)} · ${state.time}:00 UTC`,
@@ -412,6 +412,7 @@ function renderMap(sources) {
     ),
     "sources",
   ));
+
 }
 
 function renderStations(product, sources) {
@@ -470,7 +471,7 @@ function renderStations(product, sources) {
   scroll.append(stationMosaic);
 
   layout.append(scroll);
-  plots.append(layout);
+  appendPlotContent(layout);
 }
 
 function stationCard(product, location, sources) {
@@ -555,6 +556,37 @@ function mosaicGroups(items) {
 
   const leftCount = Math.ceil(items.length / 2);
   return [items.slice(0, leftCount), items.slice(leftCount)];
+}
+
+function appendPlotContent(content) {
+  content.classList.add("plot-content");
+
+  const colorbarPath = currentProduct().colorbar;
+
+  if (!colorbarPath) {
+    plots.append(content);
+    return;
+  }
+
+  const layout = document.createElement("div");
+  layout.className = "plot-with-colorbar";
+
+  const colorbar = document.createElement("aside");
+  colorbar.className = "colorbar-panel";
+
+  const image = document.createElement("img");
+  image.className = "colorbar-image";
+  image.src = imageUrl(colorbarPath);
+  image.alt = `${currentProduct().label} colour scale`;
+  image.loading = "lazy";
+
+  image.addEventListener("error", () => {
+    colorbar.remove();
+  });
+
+  colorbar.append(image);
+  layout.append(content, colorbar);
+  plots.append(layout);
 }
 
 function plotCard(label, record) {
