@@ -16,6 +16,22 @@ def parse_file(filename, product_id, product, valid_sources):
         return None
 
     tail = filename.removeprefix(prefix)
+    if product["view"] == "station-times":
+        match = re.fullmatch(r"(\d{4}-\d{2}-\d{2})_(\d{2})_(.+)", tail)
+
+        if not match:
+            return None
+
+        location_ids = {location["id"] for location in product["locations"]}
+
+        if match.group(3) not in location_ids:
+            return None
+
+        return {
+            "date": match.group(1),
+            "time": match.group(2),
+            "location": match.group(3),
+        }
     source = next(
         (item for item in sorted(valid_sources, key=len, reverse=True)
          if tail.startswith(f"{item}_")),
@@ -99,7 +115,7 @@ def main():
             item["date"],
             item.get("time", ""),
             item.get("location", ""),
-            item["source"],
+            item.get("source",""),
         ))
 
     output = Path(args.output)

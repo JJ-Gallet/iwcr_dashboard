@@ -11,8 +11,10 @@ const state = {
   time: "00",
   sources: new Set(),
   locations: new Set(),
+  times: new Set(),
   sourceOrder: [],
   stationOrder: [],
+  timeOrder: [],
 };
 
 let config;
@@ -83,11 +85,29 @@ function selectProduct(productId) {
 
   state.date = dates.at(-1) ?? new Date().toISOString().slice(0, 10);
   state.time = latestTime(state.productId, state.date) ?? hours[0] ?? "00";
-  state.sources = new Set(product.defaultSources ?? [config.observationSource]);
   state.locations = new Set(product.defaultLocations ?? []);
-  state.sourceOrder = [...sourceIds(product)];
   state.stationOrder = (product.locations ?? []).map((location) => location.id);
 
+  if (product.view === "station-times") {
+    const detectedTimes = availableVerticalTimes(state.date);
+
+    state.sources = new Set();
+    state.sourceOrder = [];
+    state.timeOrder = [...detectedTimes];
+
+    state.times = new Set(
+      product.defaultTimes?.length
+        ? product.defaultTimes.filter((time) => detectedTimes.includes(time))
+        : detectedTimes,
+    );
+  } else {
+    state.sources = new Set(
+      product.defaultSources ?? [config.observationSource],
+    );
+    state.sourceOrder = [...sourceIds(product)];
+    state.times = new Set();
+    state.timeOrder = [];
+  }
   controls.hidden = false;
   productMeta.hidden = false;
   fullscreenButton.disabled = false;
@@ -172,6 +192,21 @@ function orderItems(order, allowedIds) {
   ];
 }
 
+function availableVerticalTimes(date = state.date) {
+  return [...new Set(
+    records(state.productId)
+      .filter((record) => record.date === date && record.time)
+      .map((record) => record.time),
+  )].sort();
+}
+
+function selectedVerticalTimes() {
+  const selected = availableVerticalTimes()
+    .filter((time) => state.times.has(time));
+
+  return orderItems(state.timeOrder, selected);
+}
+
 function selectedSources() {
   const product = currentProduct();
   const selected = sourceIds(product).filter((id) => state.sources.has(id));
@@ -221,7 +256,7 @@ function renderControls() {
 
     ${product.view === "map" ? timeControl("time-input") : ""}
 
-    ${choiceGroup(
+    ${product.view !== "station-times" ? choiceGroup(
       "sources",
       "Models",
       orderItems(state.sourceOrder, sourceIds(product)).map((id) => ({
@@ -229,9 +264,19 @@ function renderControls() {
         label: sourceLabel(id),
       })),
       state.sources,
-    )}
+    ) : ""}
 
-    ${product.view === "station"
+    ${product.view === "station-times" ? choiceGroup(
+      "times",
+      "UTC times",
+      availableVerticalTimes().map((time) => ({
+        id: time,
+        label: `${time}:00 UTC`,
+      })),
+      state.times,
+    ) : ""}
+
+    ${["station", "station-times"].includes(product.view)
       ? choiceGroup(
         "locations",
         "Locations",
@@ -248,6 +293,20 @@ function renderControls() {
       const hours = availableHours(product);
       state.time = latestTime(state.productId, state.date)
         ?? (hours.includes(state.time) ? state.time : hours[0]);
+    }
+
+    if (product.view === "station-times") {
+      const detectedTimes = availableVerticalTimes(state.date);
+
+      state.timeOrder = orderItems(state.timeOrder, detectedTimes);
+
+      state.times = new Set(
+        [...state.times].filter((time) => detectedTimes.includes(time)),
+      );
+
+      if (!state.times.size) {
+    	state.times = new Set(detectedTimes);
+      }
     }
 
     refresh();
@@ -370,7 +429,9 @@ function bindSelectionControls(container) {
 
       const ids = target === "sources"
         ? sourceIds(product)
-        : product.locations.map((location) => location.id);
+        : target === "times"
+          ? availableVerticalTimes()
+          : product.locations.map((location) => location.id);
 
       state[target] = new Set(button.dataset.action === "all" ? ids : []);
       refresh();
@@ -384,6 +445,12 @@ function renderPlots() {
   if (!state.productId) return;
 
   const product = currentProduct();
+
+  if (product.view === "station-times") {
+    renderVertical(product);
+    return;
+  }
+	
   const sources = selectedSources();
 
   if (!sources.length) {
@@ -413,6 +480,92 @@ function renderMap(sources) {
     "sources",
   ));
 
+}
+
+function renderVertical(product) {
+  const locations = selectedLocations();
+  const times = selectedVerticalTimes();
+
+  if (!locations.length) {
+    status.textContent = "Select at least one location.";
+    return;
+  }
+
+  if (!times.length) {
+    status.textContent = "Select at least one UTC time.";
+    return;
+  }
+
+  const available = locations.some((location) =>
+    times.some((time) =>
+      assetFor(
+        state.productId,
+        "",
+        state.date,
+        time,
+        location.id,
+      ),
+    ),
+  );
+
+  status.textContent = available
+    ? `${state.date} · ${times.map((time) => `${time}:00`).join(", ")} UTC`
+    : `No graphics available for ${state.date}.`;
+
+  const layout = document.createElement("div");
+  layout.className = "station-layout no-overview";
+
+  const stationMosaic = modelMosaic(
+    locations,
+    (location) => verticalStationCard(location, times),
+    "locations",
+  );
+
+  stationMosaic.classList.add("station-mosaic");
+
+  const scroll = document.createElement("div");
+  scroll.className = "station-board-scroll";
+  scroll.append(stationMosaic);
+
+  layout.append(scroll);
+
+  appendPlotContent(layout);
+}
+
+function verticalStationCard(location, times) {
+  const card = document.createElement("article");
+  card.className = "station-card";
+
+  const header = document.createElement("header");
+  const title = document.createElement("h3");
+  title.textContent = location.label;
+
+  header.append(title);
+  card.append(header);
+
+  /*
+   * Dragging a time plot swaps the time order globally for every visible
+   * vertical station card.
+   */
+  const timeMosaic = modelMosaic(
+    times,
+    (time) => plotCard(
+      `${time}:00 UTC`,
+      assetFor(
+        state.productId,
+        "",
+        state.date,
+        time,
+        location.id,
+      ),
+    ),
+    "times",
+  );
+
+  timeMosaic.classList.add("station-model-mosaic");
+  card.append(timeMosaic);
+
+  return card;
 }
 
 function renderStations(product, sources) {
@@ -744,7 +897,11 @@ function makeSortable(element, type, id) {
 }
 
 function swapOrder(type, firstId, secondId) {
-  const order = type === "sources" ? state.sourceOrder : state.stationOrder;
+  const order = type === "sources"
+    ? state.sourceOrder
+    : type === "times"
+      ? state.timeOrder
+      : state.stationOrder;
   const firstIndex = order.indexOf(firstId);
   const secondIndex = order.indexOf(secondId);
 
@@ -870,6 +1027,39 @@ function renderFullscreenToolbar() {
 
   const product = currentProduct();
 
+  const timeSelector = product.view === "station-times"
+    ? fullscreenChoiceGroup(
+      "times",
+      "UTC times",
+      availableVerticalTimes().map((time) => ({
+        id: time,
+        label: `${time}:00 UTC`,
+      })),
+      state.times,
+    )
+    : "";
+
+  const modelSelector = product.view !== "station-times"
+    ? fullscreenChoiceGroup(
+      "sources",
+      "Models",
+      orderItems(state.sourceOrder, sourceIds(product)).map((id) => ({
+        id,
+        label: sourceLabel(id),
+      })),
+      state.sources,
+    )
+    : "";
+
+  const locationSelector = ["station", "station-times"].includes(product.view)
+    ? fullscreenChoiceGroup(
+      "locations",
+      "Locations",
+      selectedLocationChoices(product),
+      state.locations,
+    )
+    : "";
+
   fullscreenToolbar.innerHTML = `
     <div class="fullscreen-toolbar-header">
       <strong>Controls</strong>
@@ -882,29 +1072,14 @@ function renderFullscreenToolbar() {
       </section>
     ` : ""}
 
-    ${fullscreenChoiceGroup(
-      "sources",
-      "Models",
-      orderItems(state.sourceOrder, sourceIds(product)).map((id) => ({
-        id,
-        label: sourceLabel(id),
-      })),
-      state.sources,
-    )}
-
-    ${product.view === "station"
-      ? fullscreenChoiceGroup(
-        "locations",
-        "Locations",
-        selectedLocationChoices(product),
-        state.locations,
-      )
-      : ""}
+    ${timeSelector}
+    ${modelSelector}
+    ${locationSelector}
   `;
 
-  fullscreenToolbar.querySelector("[data-exit-fullscreen]").addEventListener("click", () => {
-    document.exitFullscreen();
-  });
+  fullscreenToolbar
+    .querySelector("[data-exit-fullscreen]")
+    .addEventListener("click", () => document.exitFullscreen());
 
   bindTimeControls(fullscreenToolbar, "#fullscreen-time-input");
   bindSelectionControls(fullscreenToolbar);

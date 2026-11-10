@@ -8,6 +8,18 @@
     { "id": "obs", "label": "Observation" }
   ],
   "products": {
+    "vertical": {
+      "label": "Vertical",
+      "view": "station-times",
+      "description": "Vertical plots at available UTC times.",
+      "minimap": false,
+      "defaultLocations": ["bozen"],
+      "defaultTimes": [],
+      "locations": [
+        { "id": "bozen", "label": "Bozen" },
+        { "id": "kolsass", "label": "Kolsass" }
+      ]
+    },
     "rain": {
       "label": "Rain",
       "view": "map",
