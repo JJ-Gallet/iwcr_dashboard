@@ -14,7 +14,7 @@
       "description": "Vertical plots at available UTC times.",
       "minimap": false,
       "defaultLocations": ["bozen"],
-      "defaultTimes": [],
+      "defaultTimes": ["11"],
       "locations": [
         { "id": "bozen", "label": "Bozen" },
         { "id": "kolsass", "label": "Kolsass" }
