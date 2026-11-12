@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-12T09:24:04.876324+00:00",
+  "generatedAt": "2026-11-12T10:14:49.051620+00:00",
   "products": {
     "vertical": [
       {
@@ -3303,6 +3303,36 @@
         "date": "2025-06-30",
         "location": "bozen",
         "file": "graphics/raso_obs_2025-06-30_bozen.png"
+      },
+      {
+        "source": "claef1k_30s",
+        "date": "2025-07-23",
+        "location": "bozen",
+        "file": "graphics/raso_claef1k_30s_2025-07-23_bozen.png"
+      },
+      {
+        "source": "claef1k_comad",
+        "date": "2025-07-23",
+        "location": "bozen",
+        "file": "graphics/raso_claef1k_comad_2025-07-23_bozen.png"
+      },
+      {
+        "source": "claef1k_ref",
+        "date": "2025-07-23",
+        "location": "bozen",
+        "file": "graphics/raso_claef1k_ref_2025-07-23_bozen.png"
+      },
+      {
+        "source": "claef1k_slhd",
+        "date": "2025-07-23",
+        "location": "bozen",
+        "file": "graphics/raso_claef1k_slhd_2025-07-23_bozen.png"
+      },
+      {
+        "source": "obs",
+        "date": "2025-07-23",
+        "location": "bozen",
+        "file": "graphics/raso_obs_2025-07-23_bozen.png"
       }
     ]
   }
