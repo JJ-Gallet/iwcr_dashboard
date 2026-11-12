@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-10T19:55:46.433592+00:00",
+  "generatedAt": "2026-11-12T09:24:04.876324+00:00",
   "products": {
     "vertical": [
       {
@@ -3031,6 +3031,246 @@
         "date": "2025-06-30",
         "location": "stmartin",
         "file": "graphics/lidar_obs_2025-06-30_stmartin.png"
+      },
+      {
+        "source": "claef1k_30s",
+        "date": "2025-07-23",
+        "location": "bozen",
+        "file": "graphics/lidar_claef1k_30s_2025-07-23_bozen.png"
+      },
+      {
+        "source": "claef1k_comad",
+        "date": "2025-07-23",
+        "location": "bozen",
+        "file": "graphics/lidar_claef1k_comad_2025-07-23_bozen.png"
+      },
+      {
+        "source": "claef1k_ref",
+        "date": "2025-07-23",
+        "location": "bozen",
+        "file": "graphics/lidar_claef1k_ref_2025-07-23_bozen.png"
+      },
+      {
+        "source": "claef1k_slhd",
+        "date": "2025-07-23",
+        "location": "bozen",
+        "file": "graphics/lidar_claef1k_slhd_2025-07-23_bozen.png"
+      },
+      {
+        "source": "obs",
+        "date": "2025-07-23",
+        "location": "bozen",
+        "file": "graphics/lidar_obs_2025-07-23_bozen.png"
+      },
+      {
+        "source": "claef1k_30s",
+        "date": "2025-07-23",
+        "location": "gargazon",
+        "file": "graphics/lidar_claef1k_30s_2025-07-23_gargazon.png"
+      },
+      {
+        "source": "claef1k_comad",
+        "date": "2025-07-23",
+        "location": "gargazon",
+        "file": "graphics/lidar_claef1k_comad_2025-07-23_gargazon.png"
+      },
+      {
+        "source": "claef1k_ref",
+        "date": "2025-07-23",
+        "location": "gargazon",
+        "file": "graphics/lidar_claef1k_ref_2025-07-23_gargazon.png"
+      },
+      {
+        "source": "claef1k_slhd",
+        "date": "2025-07-23",
+        "location": "gargazon",
+        "file": "graphics/lidar_claef1k_slhd_2025-07-23_gargazon.png"
+      },
+      {
+        "source": "obs",
+        "date": "2025-07-23",
+        "location": "gargazon",
+        "file": "graphics/lidar_obs_2025-07-23_gargazon.png"
+      },
+      {
+        "source": "claef1k_30s",
+        "date": "2025-07-23",
+        "location": "kollmann",
+        "file": "graphics/lidar_claef1k_30s_2025-07-23_kollmann.png"
+      },
+      {
+        "source": "claef1k_comad",
+        "date": "2025-07-23",
+        "location": "kollmann",
+        "file": "graphics/lidar_claef1k_comad_2025-07-23_kollmann.png"
+      },
+      {
+        "source": "claef1k_ref",
+        "date": "2025-07-23",
+        "location": "kollmann",
+        "file": "graphics/lidar_claef1k_ref_2025-07-23_kollmann.png"
+      },
+      {
+        "source": "claef1k_slhd",
+        "date": "2025-07-23",
+        "location": "kollmann",
+        "file": "graphics/lidar_claef1k_slhd_2025-07-23_kollmann.png"
+      },
+      {
+        "source": "obs",
+        "date": "2025-07-23",
+        "location": "kollmann",
+        "file": "graphics/lidar_obs_2025-07-23_kollmann.png"
+      },
+      {
+        "source": "claef1k_30s",
+        "date": "2025-07-23",
+        "location": "mittewald",
+        "file": "graphics/lidar_claef1k_30s_2025-07-23_mittewald.png"
+      },
+      {
+        "source": "claef1k_comad",
+        "date": "2025-07-23",
+        "location": "mittewald",
+        "file": "graphics/lidar_claef1k_comad_2025-07-23_mittewald.png"
+      },
+      {
+        "source": "claef1k_ref",
+        "date": "2025-07-23",
+        "location": "mittewald",
+        "file": "graphics/lidar_claef1k_ref_2025-07-23_mittewald.png"
+      },
+      {
+        "source": "claef1k_slhd",
+        "date": "2025-07-23",
+        "location": "mittewald",
+        "file": "graphics/lidar_claef1k_slhd_2025-07-23_mittewald.png"
+      },
+      {
+        "source": "obs",
+        "date": "2025-07-23",
+        "location": "mittewald",
+        "file": "graphics/lidar_obs_2025-07-23_mittewald.png"
+      },
+      {
+        "source": "claef1k_30s",
+        "date": "2025-07-23",
+        "location": "naturns",
+        "file": "graphics/lidar_claef1k_30s_2025-07-23_naturns.png"
+      },
+      {
+        "source": "claef1k_comad",
+        "date": "2025-07-23",
+        "location": "naturns",
+        "file": "graphics/lidar_claef1k_comad_2025-07-23_naturns.png"
+      },
+      {
+        "source": "claef1k_ref",
+        "date": "2025-07-23",
+        "location": "naturns",
+        "file": "graphics/lidar_claef1k_ref_2025-07-23_naturns.png"
+      },
+      {
+        "source": "claef1k_slhd",
+        "date": "2025-07-23",
+        "location": "naturns",
+        "file": "graphics/lidar_claef1k_slhd_2025-07-23_naturns.png"
+      },
+      {
+        "source": "obs",
+        "date": "2025-07-23",
+        "location": "naturns",
+        "file": "graphics/lidar_obs_2025-07-23_naturns.png"
+      },
+      {
+        "source": "claef1k_30s",
+        "date": "2025-07-23",
+        "location": "rittnerhorn",
+        "file": "graphics/lidar_claef1k_30s_2025-07-23_rittnerhorn.png"
+      },
+      {
+        "source": "claef1k_comad",
+        "date": "2025-07-23",
+        "location": "rittnerhorn",
+        "file": "graphics/lidar_claef1k_comad_2025-07-23_rittnerhorn.png"
+      },
+      {
+        "source": "claef1k_ref",
+        "date": "2025-07-23",
+        "location": "rittnerhorn",
+        "file": "graphics/lidar_claef1k_ref_2025-07-23_rittnerhorn.png"
+      },
+      {
+        "source": "claef1k_slhd",
+        "date": "2025-07-23",
+        "location": "rittnerhorn",
+        "file": "graphics/lidar_claef1k_slhd_2025-07-23_rittnerhorn.png"
+      },
+      {
+        "source": "obs",
+        "date": "2025-07-23",
+        "location": "rittnerhorn",
+        "file": "graphics/lidar_obs_2025-07-23_rittnerhorn.png"
+      },
+      {
+        "source": "claef1k_30s",
+        "date": "2025-07-23",
+        "location": "sarnthein",
+        "file": "graphics/lidar_claef1k_30s_2025-07-23_sarnthein.png"
+      },
+      {
+        "source": "claef1k_comad",
+        "date": "2025-07-23",
+        "location": "sarnthein",
+        "file": "graphics/lidar_claef1k_comad_2025-07-23_sarnthein.png"
+      },
+      {
+        "source": "claef1k_ref",
+        "date": "2025-07-23",
+        "location": "sarnthein",
+        "file": "graphics/lidar_claef1k_ref_2025-07-23_sarnthein.png"
+      },
+      {
+        "source": "claef1k_slhd",
+        "date": "2025-07-23",
+        "location": "sarnthein",
+        "file": "graphics/lidar_claef1k_slhd_2025-07-23_sarnthein.png"
+      },
+      {
+        "source": "obs",
+        "date": "2025-07-23",
+        "location": "sarnthein",
+        "file": "graphics/lidar_obs_2025-07-23_sarnthein.png"
+      },
+      {
+        "source": "claef1k_30s",
+        "date": "2025-07-23",
+        "location": "stmartin",
+        "file": "graphics/lidar_claef1k_30s_2025-07-23_stmartin.png"
+      },
+      {
+        "source": "claef1k_comad",
+        "date": "2025-07-23",
+        "location": "stmartin",
+        "file": "graphics/lidar_claef1k_comad_2025-07-23_stmartin.png"
+      },
+      {
+        "source": "claef1k_ref",
+        "date": "2025-07-23",
+        "location": "stmartin",
+        "file": "graphics/lidar_claef1k_ref_2025-07-23_stmartin.png"
+      },
+      {
+        "source": "claef1k_slhd",
+        "date": "2025-07-23",
+        "location": "stmartin",
+        "file": "graphics/lidar_claef1k_slhd_2025-07-23_stmartin.png"
+      },
+      {
+        "source": "obs",
+        "date": "2025-07-23",
+        "location": "stmartin",
+        "file": "graphics/lidar_obs_2025-07-23_stmartin.png"
       }
     ],
     "raso": [
