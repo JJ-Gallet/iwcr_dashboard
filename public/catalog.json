@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-12T10:14:49.051620+00:00",
+  "generatedAt": "2026-11-15T18:25:48.842969+00:00",
   "products": {
     "vertical": [
       {
@@ -7,6 +7,12 @@
         "time": "05",
         "location": "bozen",
         "file": "graphics/vertical_2025-06-30_05_bozen.png"
+      },
+      {
+        "date": "2025-06-30",
+        "time": "05",
+        "location": "kolsass",
+        "file": "graphics/vertical_2025-06-30_05_kolsass.png"
       },
       {
         "date": "2025-06-30",
@@ -22,9 +28,21 @@
       },
       {
         "date": "2025-06-30",
+        "time": "11",
+        "location": "kolsass",
+        "file": "graphics/vertical_2025-06-30_11_kolsass.png"
+      },
+      {
+        "date": "2025-06-30",
         "time": "14",
         "location": "bozen",
         "file": "graphics/vertical_2025-06-30_14_bozen.png"
+      },
+      {
+        "date": "2025-06-30",
+        "time": "14",
+        "location": "kolsass",
+        "file": "graphics/vertical_2025-06-30_14_kolsass.png"
       },
       {
         "date": "2025-06-30",
@@ -43,6 +61,66 @@
         "time": "23",
         "location": "bozen",
         "file": "graphics/vertical_2025-06-30_23_bozen.png"
+      },
+      {
+        "date": "2025-07-23",
+        "time": "02",
+        "location": "kolsass",
+        "file": "graphics/vertical_2025-07-23_02_kolsass.png"
+      },
+      {
+        "date": "2025-07-23",
+        "time": "05",
+        "location": "bozen",
+        "file": "graphics/vertical_2025-07-23_05_bozen.png"
+      },
+      {
+        "date": "2025-07-23",
+        "time": "05",
+        "location": "kolsass",
+        "file": "graphics/vertical_2025-07-23_05_kolsass.png"
+      },
+      {
+        "date": "2025-07-23",
+        "time": "08",
+        "location": "kolsass",
+        "file": "graphics/vertical_2025-07-23_08_kolsass.png"
+      },
+      {
+        "date": "2025-07-23",
+        "time": "09",
+        "location": "bozen",
+        "file": "graphics/vertical_2025-07-23_09_bozen.png"
+      },
+      {
+        "date": "2025-07-23",
+        "time": "12",
+        "location": "bozen",
+        "file": "graphics/vertical_2025-07-23_12_bozen.png"
+      },
+      {
+        "date": "2025-07-23",
+        "time": "15",
+        "location": "bozen",
+        "file": "graphics/vertical_2025-07-23_15_bozen.png"
+      },
+      {
+        "date": "2025-07-23",
+        "time": "18",
+        "location": "bozen",
+        "file": "graphics/vertical_2025-07-23_18_bozen.png"
+      },
+      {
+        "date": "2025-07-23",
+        "time": "21",
+        "location": "bozen",
+        "file": "graphics/vertical_2025-07-23_21_bozen.png"
+      },
+      {
+        "date": "2025-07-23",
+        "time": "23",
+        "location": "bozen",
+        "file": "graphics/vertical_2025-07-23_23_bozen.png"
       }
     ],
     "rain": [
