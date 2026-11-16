@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-15T18:25:48.842969+00:00",
+  "generatedAt": "2026-11-16T12:26:19.659170+00:00",
   "products": {
     "vertical": [
       {
@@ -125,6 +125,18 @@
     ],
     "rain": [
       {
+        "source": "agg",
+        "date": "2025-06-30",
+        "time": "01",
+        "file": "graphics/rain_agg_2025-06-30_01.png"
+      },
+      {
+        "source": "agg",
+        "date": "2025-06-30",
+        "time": "02",
+        "file": "graphics/rain_agg_2025-06-30_02.png"
+      },
+      {
         "source": "claef1k_30s",
         "date": "2025-06-30",
         "time": "02",
@@ -153,6 +165,12 @@
         "date": "2025-06-30",
         "time": "02",
         "file": "graphics/rain_obs_2025-06-30_02.png"
+      },
+      {
+        "source": "agg",
+        "date": "2025-06-30",
+        "time": "03",
+        "file": "graphics/rain_agg_2025-06-30_03.png"
       },
       {
         "source": "claef1k_30s",
@@ -185,6 +203,12 @@
         "file": "graphics/rain_obs_2025-06-30_03.png"
       },
       {
+        "source": "agg",
+        "date": "2025-06-30",
+        "time": "04",
+        "file": "graphics/rain_agg_2025-06-30_04.png"
+      },
+      {
         "source": "claef1k_30s",
         "date": "2025-06-30",
         "time": "04",
@@ -213,6 +237,12 @@
         "date": "2025-06-30",
         "time": "04",
         "file": "graphics/rain_obs_2025-06-30_04.png"
+      },
+      {
+        "source": "agg",
+        "date": "2025-06-30",
+        "time": "05",
+        "file": "graphics/rain_agg_2025-06-30_05.png"
       },
       {
         "source": "claef1k_30s",
@@ -245,6 +275,12 @@
         "file": "graphics/rain_obs_2025-06-30_05.png"
       },
       {
+        "source": "agg",
+        "date": "2025-06-30",
+        "time": "06",
+        "file": "graphics/rain_agg_2025-06-30_06.png"
+      },
+      {
         "source": "claef1k_30s",
         "date": "2025-06-30",
         "time": "06",
@@ -273,6 +309,12 @@
         "date": "2025-06-30",
         "time": "06",
         "file": "graphics/rain_obs_2025-06-30_06.png"
+      },
+      {
+        "source": "agg",
+        "date": "2025-06-30",
+        "time": "07",
+        "file": "graphics/rain_agg_2025-06-30_07.png"
       },
       {
         "source": "claef1k_30s",
@@ -305,6 +347,12 @@
         "file": "graphics/rain_obs_2025-06-30_07.png"
       },
       {
+        "source": "agg",
+        "date": "2025-06-30",
+        "time": "08",
+        "file": "graphics/rain_agg_2025-06-30_08.png"
+      },
+      {
         "source": "claef1k_30s",
         "date": "2025-06-30",
         "time": "08",
@@ -333,6 +381,12 @@
         "date": "2025-06-30",
         "time": "08",
         "file": "graphics/rain_obs_2025-06-30_08.png"
+      },
+      {
+        "source": "agg",
+        "date": "2025-06-30",
+        "time": "09",
+        "file": "graphics/rain_agg_2025-06-30_09.png"
       },
       {
         "source": "claef1k_30s",
@@ -365,6 +419,12 @@
         "file": "graphics/rain_obs_2025-06-30_09.png"
       },
       {
+        "source": "agg",
+        "date": "2025-06-30",
+        "time": "10",
+        "file": "graphics/rain_agg_2025-06-30_10.png"
+      },
+      {
         "source": "claef1k_30s",
         "date": "2025-06-30",
         "time": "10",
@@ -393,6 +453,12 @@
         "date": "2025-06-30",
         "time": "10",
         "file": "graphics/rain_obs_2025-06-30_10.png"
+      },
+      {
+        "source": "agg",
+        "date": "2025-06-30",
+        "time": "11",
+        "file": "graphics/rain_agg_2025-06-30_11.png"
       },
       {
         "source": "claef1k_30s",
@@ -425,6 +491,12 @@
         "file": "graphics/rain_obs_2025-06-30_11.png"
       },
       {
+        "source": "agg",
+        "date": "2025-06-30",
+        "time": "12",
+        "file": "graphics/rain_agg_2025-06-30_12.png"
+      },
+      {
         "source": "claef1k_30s",
         "date": "2025-06-30",
         "time": "12",
@@ -453,6 +525,12 @@
         "date": "2025-06-30",
         "time": "12",
         "file": "graphics/rain_obs_2025-06-30_12.png"
+      },
+      {
+        "source": "agg",
+        "date": "2025-06-30",
+        "time": "13",
+        "file": "graphics/rain_agg_2025-06-30_13.png"
       },
       {
         "source": "claef1k_30s",
@@ -485,6 +563,12 @@
         "file": "graphics/rain_obs_2025-06-30_13.png"
       },
       {
+        "source": "agg",
+        "date": "2025-06-30",
+        "time": "14",
+        "file": "graphics/rain_agg_2025-06-30_14.png"
+      },
+      {
         "source": "claef1k_30s",
         "date": "2025-06-30",
         "time": "14",
@@ -513,6 +597,12 @@
         "date": "2025-06-30",
         "time": "14",
         "file": "graphics/rain_obs_2025-06-30_14.png"
+      },
+      {
+        "source": "agg",
+        "date": "2025-06-30",
+        "time": "15",
+        "file": "graphics/rain_agg_2025-06-30_15.png"
       },
       {
         "source": "claef1k_30s",
@@ -545,6 +635,12 @@
         "file": "graphics/rain_obs_2025-06-30_15.png"
       },
       {
+        "source": "agg",
+        "date": "2025-06-30",
+        "time": "16",
+        "file": "graphics/rain_agg_2025-06-30_16.png"
+      },
+      {
         "source": "claef1k_30s",
         "date": "2025-06-30",
         "time": "16",
@@ -573,6 +669,12 @@
         "date": "2025-06-30",
         "time": "16",
         "file": "graphics/rain_obs_2025-06-30_16.png"
+      },
+      {
+        "source": "agg",
+        "date": "2025-06-30",
+        "time": "17",
+        "file": "graphics/rain_agg_2025-06-30_17.png"
       },
       {
         "source": "claef1k_30s",
@@ -605,6 +707,12 @@
         "file": "graphics/rain_obs_2025-06-30_17.png"
       },
       {
+        "source": "agg",
+        "date": "2025-06-30",
+        "time": "18",
+        "file": "graphics/rain_agg_2025-06-30_18.png"
+      },
+      {
         "source": "claef1k_30s",
         "date": "2025-06-30",
         "time": "18",
@@ -633,6 +741,12 @@
         "date": "2025-06-30",
         "time": "18",
         "file": "graphics/rain_obs_2025-06-30_18.png"
+      },
+      {
+        "source": "agg",
+        "date": "2025-06-30",
+        "time": "19",
+        "file": "graphics/rain_agg_2025-06-30_19.png"
       },
       {
         "source": "claef1k_30s",
@@ -665,6 +779,12 @@
         "file": "graphics/rain_obs_2025-06-30_19.png"
       },
       {
+        "source": "agg",
+        "date": "2025-06-30",
+        "time": "20",
+        "file": "graphics/rain_agg_2025-06-30_20.png"
+      },
+      {
         "source": "claef1k_30s",
         "date": "2025-06-30",
         "time": "20",
@@ -695,6 +815,12 @@
         "file": "graphics/rain_obs_2025-06-30_20.png"
       },
       {
+        "source": "agg",
+        "date": "2025-06-30",
+        "time": "21",
+        "file": "graphics/rain_agg_2025-06-30_21.png"
+      },
+      {
         "source": "claef1k_30s",
         "date": "2025-06-30",
         "time": "21",
@@ -723,6 +849,12 @@
         "date": "2025-06-30",
         "time": "21",
         "file": "graphics/rain_obs_2025-06-30_21.png"
+      },
+      {
+        "source": "agg",
+        "date": "2025-06-30",
+        "time": "22",
+        "file": "graphics/rain_agg_2025-06-30_22.png"
       },
       {
         "source": "claef1k_30s",
@@ -809,6 +941,18 @@
         "file": "graphics/rain_claef1k_slhd_2025-06-30_24.png"
       },
       {
+        "source": "agg",
+        "date": "2025-07-23",
+        "time": "01",
+        "file": "graphics/rain_agg_2025-07-23_01.png"
+      },
+      {
+        "source": "agg",
+        "date": "2025-07-23",
+        "time": "02",
+        "file": "graphics/rain_agg_2025-07-23_02.png"
+      },
+      {
         "source": "claef1k_30s",
         "date": "2025-07-23",
         "time": "02",
@@ -837,6 +981,12 @@
         "date": "2025-07-23",
         "time": "02",
         "file": "graphics/rain_obs_2025-07-23_02.png"
+      },
+      {
+        "source": "agg",
+        "date": "2025-07-23",
+        "time": "03",
+        "file": "graphics/rain_agg_2025-07-23_03.png"
       },
       {
         "source": "claef1k_30s",
@@ -869,6 +1019,12 @@
         "file": "graphics/rain_obs_2025-07-23_03.png"
       },
       {
+        "source": "agg",
+        "date": "2025-07-23",
+        "time": "04",
+        "file": "graphics/rain_agg_2025-07-23_04.png"
+      },
+      {
         "source": "claef1k_30s",
         "date": "2025-07-23",
         "time": "04",
@@ -897,6 +1053,12 @@
         "date": "2025-07-23",
         "time": "04",
         "file": "graphics/rain_obs_2025-07-23_04.png"
+      },
+      {
+        "source": "agg",
+        "date": "2025-07-23",
+        "time": "05",
+        "file": "graphics/rain_agg_2025-07-23_05.png"
       },
       {
         "source": "claef1k_30s",
@@ -929,6 +1091,12 @@
         "file": "graphics/rain_obs_2025-07-23_05.png"
       },
       {
+        "source": "agg",
+        "date": "2025-07-23",
+        "time": "06",
+        "file": "graphics/rain_agg_2025-07-23_06.png"
+      },
+      {
         "source": "claef1k_30s",
         "date": "2025-07-23",
         "time": "06",
@@ -957,6 +1125,12 @@
         "date": "2025-07-23",
         "time": "06",
         "file": "graphics/rain_obs_2025-07-23_06.png"
+      },
+      {
+        "source": "agg",
+        "date": "2025-07-23",
+        "time": "07",
+        "file": "graphics/rain_agg_2025-07-23_07.png"
       },
       {
         "source": "claef1k_30s",
@@ -989,6 +1163,12 @@
         "file": "graphics/rain_obs_2025-07-23_07.png"
       },
       {
+        "source": "agg",
+        "date": "2025-07-23",
+        "time": "08",
+        "file": "graphics/rain_agg_2025-07-23_08.png"
+      },
+      {
         "source": "claef1k_30s",
         "date": "2025-07-23",
         "time": "08",
@@ -1017,6 +1197,12 @@
         "date": "2025-07-23",
         "time": "08",
         "file": "graphics/rain_obs_2025-07-23_08.png"
+      },
+      {
+        "source": "agg",
+        "date": "2025-07-23",
+        "time": "09",
+        "file": "graphics/rain_agg_2025-07-23_09.png"
       },
       {
         "source": "claef1k_30s",
@@ -1049,6 +1235,12 @@
         "file": "graphics/rain_obs_2025-07-23_09.png"
       },
       {
+        "source": "agg",
+        "date": "2025-07-23",
+        "time": "10",
+        "file": "graphics/rain_agg_2025-07-23_10.png"
+      },
+      {
         "source": "claef1k_30s",
         "date": "2025-07-23",
         "time": "10",
@@ -1077,6 +1269,12 @@
         "date": "2025-07-23",
         "time": "10",
         "file": "graphics/rain_obs_2025-07-23_10.png"
+      },
+      {
+        "source": "agg",
+        "date": "2025-07-23",
+        "time": "11",
+        "file": "graphics/rain_agg_2025-07-23_11.png"
       },
       {
         "source": "claef1k_30s",
@@ -1109,6 +1307,12 @@
         "file": "graphics/rain_obs_2025-07-23_11.png"
       },
       {
+        "source": "agg",
+        "date": "2025-07-23",
+        "time": "12",
+        "file": "graphics/rain_agg_2025-07-23_12.png"
+      },
+      {
         "source": "claef1k_30s",
         "date": "2025-07-23",
         "time": "12",
@@ -1137,6 +1341,12 @@
         "date": "2025-07-23",
         "time": "12",
         "file": "graphics/rain_obs_2025-07-23_12.png"
+      },
+      {
+        "source": "agg",
+        "date": "2025-07-23",
+        "time": "13",
+        "file": "graphics/rain_agg_2025-07-23_13.png"
       },
       {
         "source": "claef1k_30s",
@@ -1169,6 +1379,12 @@
         "file": "graphics/rain_obs_2025-07-23_13.png"
       },
       {
+        "source": "agg",
+        "date": "2025-07-23",
+        "time": "14",
+        "file": "graphics/rain_agg_2025-07-23_14.png"
+      },
+      {
         "source": "claef1k_30s",
         "date": "2025-07-23",
         "time": "14",
@@ -1197,6 +1413,12 @@
         "date": "2025-07-23",
         "time": "14",
         "file": "graphics/rain_obs_2025-07-23_14.png"
+      },
+      {
+        "source": "agg",
+        "date": "2025-07-23",
+        "time": "15",
+        "file": "graphics/rain_agg_2025-07-23_15.png"
       },
       {
         "source": "claef1k_30s",
@@ -1229,6 +1451,12 @@
         "file": "graphics/rain_obs_2025-07-23_15.png"
       },
       {
+        "source": "agg",
+        "date": "2025-07-23",
+        "time": "16",
+        "file": "graphics/rain_agg_2025-07-23_16.png"
+      },
+      {
         "source": "claef1k_30s",
         "date": "2025-07-23",
         "time": "16",
@@ -1257,6 +1485,12 @@
         "date": "2025-07-23",
         "time": "16",
         "file": "graphics/rain_obs_2025-07-23_16.png"
+      },
+      {
+        "source": "agg",
+        "date": "2025-07-23",
+        "time": "17",
+        "file": "graphics/rain_agg_2025-07-23_17.png"
       },
       {
         "source": "claef1k_30s",
@@ -1289,6 +1523,12 @@
         "file": "graphics/rain_obs_2025-07-23_17.png"
       },
       {
+        "source": "agg",
+        "date": "2025-07-23",
+        "time": "18",
+        "file": "graphics/rain_agg_2025-07-23_18.png"
+      },
+      {
         "source": "claef1k_30s",
         "date": "2025-07-23",
         "time": "18",
@@ -1317,6 +1557,12 @@
         "date": "2025-07-23",
         "time": "18",
         "file": "graphics/rain_obs_2025-07-23_18.png"
+      },
+      {
+        "source": "agg",
+        "date": "2025-07-23",
+        "time": "19",
+        "file": "graphics/rain_agg_2025-07-23_19.png"
       },
       {
         "source": "claef1k_30s",
@@ -1349,6 +1595,12 @@
         "file": "graphics/rain_obs_2025-07-23_19.png"
       },
       {
+        "source": "agg",
+        "date": "2025-07-23",
+        "time": "20",
+        "file": "graphics/rain_agg_2025-07-23_20.png"
+      },
+      {
         "source": "claef1k_30s",
         "date": "2025-07-23",
         "time": "20",
@@ -1379,6 +1631,12 @@
         "file": "graphics/rain_obs_2025-07-23_20.png"
       },
       {
+        "source": "agg",
+        "date": "2025-07-23",
+        "time": "21",
+        "file": "graphics/rain_agg_2025-07-23_21.png"
+      },
+      {
         "source": "claef1k_30s",
         "date": "2025-07-23",
         "time": "21",
@@ -1407,6 +1665,12 @@
         "date": "2025-07-23",
         "time": "21",
         "file": "graphics/rain_obs_2025-07-23_21.png"
+      },
+      {
+        "source": "agg",
+        "date": "2025-07-23",
+        "time": "22",
+        "file": "graphics/rain_agg_2025-07-23_22.png"
       },
       {
         "source": "claef1k_30s",

@@ -5,13 +5,15 @@
     { "id": "claef1k_comad", "label": "CLA-EF 1k COMAD" },
     { "id": "claef1k_30s", "label": "CLA-EF 1k 30 s" },
     { "id": "claef1k_slhd", "label": "CLA-EF 1k SLHD" },
-    { "id": "obs", "label": "Observation" }
+    { "id": "obs", "label": "Observation" },
+    { "id": "agg", "label": "aggregated" }
   ],
   "products": {
     "vertical": {
       "label": "Vertical",
       "view": "station-times",
       "description": "Vertical plots at available UTC times.",
+      "sources": ["claef1k_ref", "claef1k_30s", "claef1k_slhd", "claef1k_comad", "obs"],
       "minimap": false,
       "defaultLocations": ["bozen"],
       "defaultTimes": ["11"],
@@ -33,6 +35,7 @@
       "label": "Radar",
       "view": "map",
       "colorbar": "graphics/colorbar_radar.png",
+      "sources": ["claef1k_ref", "claef1k_30s", "claef1k_slhd", "claef1k_comad", "obs"],
       "description": "Hourly radar maps.",
       "hours": { "start": 0, "end": 23 },
       "defaultSources": ["obs"],
@@ -42,6 +45,7 @@
       "label": "Lidar",
       "view": "station",
       "colorbar": "graphics/colorbar_lidar.png",
+      "sources": ["claef1k_ref", "claef1k_30s", "claef1k_slhd", "claef1k_comad", "obs"],
       "description": "Wind height-time plots, 00–24 UTC.",
       "minimap": true,
       "defaultSources": ["obs"],
@@ -61,6 +65,7 @@
       "label": "Radiosonde",
       "view": "station",
       "colorbar": "graphics/colorbar_raso.png",
+      "sources": ["claef1k_ref", "claef1k_30s", "claef1k_slhd", "claef1k_comad", "obs"],
       "description": "Temperature and humidity height-time plots, 00–24 UTC.",
       "minimap": false,
       "defaultSources": ["obs"],
