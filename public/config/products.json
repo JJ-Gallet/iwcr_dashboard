@@ -19,7 +19,9 @@
       "defaultTimes": ["11"],
       "locations": [
         { "id": "bozen", "label": "Bozen" },
-        { "id": "kolsass", "label": "Kolsass" }
+        { "id": "kolsass", "label": "Kolsass" },
+        { "id": "innsbruck", "label": "Innsburck" },
+        { "id": "udine", "label": "Udine" }
       ]
     },
     "rain": {
@@ -59,6 +61,7 @@
         { "id": "rittnerhorn", "label": "Rittner Horn", "coordinates": [11.460197, 46.615651] },
         { "id": "sarnthein", "label": "Sarnthein", "coordinates": [11.359278, 46.634911] },
         { "id": "stmartin", "label": "St. Martin", "coordinates": [11.231075, 46.784444] }
+	
       ]
     },
     "raso": {

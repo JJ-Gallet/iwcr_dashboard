@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-16T12:26:19.659170+00:00",
+  "generatedAt": "2026-11-17T05:47:12.143626+00:00",
   "products": {
     "vertical": [
       {
@@ -16,6 +16,12 @@
       },
       {
         "date": "2025-06-30",
+        "time": "07",
+        "location": "innsbruck",
+        "file": "graphics/vertical_2025-06-30_07_innsbruck.png"
+      },
+      {
+        "date": "2025-06-30",
         "time": "08",
         "location": "bozen",
         "file": "graphics/vertical_2025-06-30_08_bozen.png"
@@ -29,8 +35,20 @@
       {
         "date": "2025-06-30",
         "time": "11",
+        "location": "innsbruck",
+        "file": "graphics/vertical_2025-06-30_11_innsbruck.png"
+      },
+      {
+        "date": "2025-06-30",
+        "time": "11",
         "location": "kolsass",
         "file": "graphics/vertical_2025-06-30_11_kolsass.png"
+      },
+      {
+        "date": "2025-06-30",
+        "time": "12",
+        "location": "udine",
+        "file": "graphics/vertical_2025-06-30_12_udine.png"
       },
       {
         "date": "2025-06-30",
@@ -65,6 +83,12 @@
       {
         "date": "2025-07-23",
         "time": "02",
+        "location": "innsbruck",
+        "file": "graphics/vertical_2025-07-23_02_innsbruck.png"
+      },
+      {
+        "date": "2025-07-23",
+        "time": "02",
         "location": "kolsass",
         "file": "graphics/vertical_2025-07-23_02_kolsass.png"
       },
@@ -94,9 +118,33 @@
       },
       {
         "date": "2025-07-23",
+        "time": "11",
+        "location": "innsbruck",
+        "file": "graphics/vertical_2025-07-23_11_innsbruck.png"
+      },
+      {
+        "date": "2025-07-23",
+        "time": "11",
+        "location": "kolsass",
+        "file": "graphics/vertical_2025-07-23_11_kolsass.png"
+      },
+      {
+        "date": "2025-07-23",
         "time": "12",
         "location": "bozen",
         "file": "graphics/vertical_2025-07-23_12_bozen.png"
+      },
+      {
+        "date": "2025-07-23",
+        "time": "12",
+        "location": "udine",
+        "file": "graphics/vertical_2025-07-23_12_udine.png"
+      },
+      {
+        "date": "2025-07-23",
+        "time": "14",
+        "location": "kolsass",
+        "file": "graphics/vertical_2025-07-23_14_kolsass.png"
       },
       {
         "date": "2025-07-23",
