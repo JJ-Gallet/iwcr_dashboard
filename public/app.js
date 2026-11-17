@@ -4,7 +4,7 @@ const STATION_COLOURS = [
   "#d55e00", "#0072b2", "#009e73", "#cc79a7",
   "#e69f00", "#56b4e9", "#7a4da3", "#4d7c0f",
 ];
-
+const productViews = new Map();
 const state = {
   productId: null,
   date: "",
@@ -66,8 +66,92 @@ async function fetchJson(url) {
   if (!response.ok) throw new Error(`${url} (${response.status})`);
   return response.json();
 }
+function saveCurrentProductView() {
+  if (!state.productId) return;
+
+  productViews.set(state.productId, {
+    date: state.date,
+    time: state.time,
+    sources: [...state.sources],
+    locations: [...state.locations],
+    times: [...state.times],
+    sourceOrder: [...state.sourceOrder],
+    stationOrder: [...state.stationOrder],
+    timeOrder: [...state.timeOrder],
+  });
+}
+
+function restoreProductView(productId, product) {
+  const saved = productViews.get(productId);
+
+  const dates = availableDates(productId);
+  const fallbackDate = dates.at(-1) ?? new Date().toISOString().slice(0, 10);
+
+  /*
+   * Keep the saved date, including dates which currently have no graphics.
+   * This is intentional: returning to a product restores exactly the view
+   * the user left.
+   */
+  state.date = saved?.date ?? fallbackDate;
+  state.locations = new Set(
+    saved?.locations ?? product.defaultLocations ?? [],
+  );
+
+  state.stationOrder = saved?.stationOrder?.length
+    ? [...saved.stationOrder]
+    : product.locations.map((location) => location.id);
+
+  if (product.view === "station-times") {
+    const availableTimes = availableVerticalTimes(state.date);
+
+    state.time = "00";
+    state.sources = new Set();
+    state.sourceOrder = [];
+
+    state.times = new Set(
+      saved?.times ?? (
+        product.defaultTimes?.length
+          ? product.defaultTimes
+          : availableTimes
+      ),
+    );
+
+    state.timeOrder = saved?.timeOrder?.length
+      ? [...saved.timeOrder]
+      : [...availableTimes];
+
+    return;
+  }
+
+  state.times = new Set();
+  state.timeOrder = [];
+
+  state.sources = new Set(
+    saved?.sources ?? product.defaultSources ?? [config.observationSource],
+  );
+
+  state.sourceOrder = saved?.sourceOrder?.length
+    ? [...saved.sourceOrder]
+    : [...sourceIds(product)];
+
+  if (product.view === "map") {
+    const hours = availableHours(product);
+
+    state.time = saved?.time
+      ?? latestTime(productId, state.date)
+      ?? hours[0]
+      ?? "00";
+  } else {
+    state.time = "00";
+  }
+}
 
 function selectProduct(productId) {
+  /*
+   * Save the current product state before switching away from it.
+   */
+  saveCurrentProductView();
+
   state.productId = productId || null;
   plots.replaceChildren();
 
@@ -80,34 +164,13 @@ function selectProduct(productId) {
   }
 
   const product = currentProduct();
-  const dates = availableDates(state.productId);
-  const hours = availableHours(product);
 
-  state.date = dates.at(-1) ?? new Date().toISOString().slice(0, 10);
-  state.time = latestTime(state.productId, state.date) ?? hours[0] ?? "00";
-  state.locations = new Set(product.defaultLocations ?? []);
-  state.stationOrder = (product.locations ?? []).map((location) => location.id);
+  /*
+   * Restore saved state if this product has already been visited.
+   * Otherwise create its initial/default state.
+   */
+  restoreProductView(state.productId, product);
 
-  if (product.view === "station-times") {
-    const detectedTimes = availableVerticalTimes(state.date);
-
-    state.sources = new Set();
-    state.sourceOrder = [];
-    state.timeOrder = [...detectedTimes];
-
-    state.times = new Set(
-      product.defaultTimes?.length
-        ? product.defaultTimes.filter((time) => detectedTimes.includes(time))
-        : detectedTimes,
-    );
-  } else {
-    state.sources = new Set(
-      product.defaultSources ?? [config.observationSource],
-    );
-    state.sourceOrder = [...sourceIds(product)];
-    state.times = new Set();
-    state.timeOrder = [];
-  }
   controls.hidden = false;
   productMeta.hidden = false;
   fullscreenButton.disabled = false;
